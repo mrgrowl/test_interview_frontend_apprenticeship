@@ -24,3 +24,12 @@ console.log(tabPair);
 
 */
 
+/*
+Tâche 2 : Modifier le texte HTML lors du clique sur le bouton approprié
+*/
+
+let btn = document.getElementById('btnText');
+let text = document.getElementById('myText');
+btn.addEventListener("click", ()=> {
+    text.textContent = "Hello, Check !";
+});
