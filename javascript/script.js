@@ -33,3 +33,21 @@ let text = document.getElementById('myText');
 btn.addEventListener("click", ()=> {
     text.textContent = "Hello, Check !";
 });
+
+/*
+Tâche 3 : Récupérer des données via l'API et les afficher dans le HTML
+*/ 
+
+let list = document.getElementById('listeApi');
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(resp => resp.json())
+    .then(data => {
+        data.slice(0,5).forEach(tache => {
+            let li = document.createElement('li');
+            li.textContent = tache.title;
+            list.appendChild(li);
+        })
+    })
+    .catch(err => console.log(err))
+    .finally(console.log("Tâche 3 - les données ont bien été récupérées"));
